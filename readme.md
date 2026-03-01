@@ -1,3 +1,8 @@
+## Requirements
+
+- Go 1.26
+- Mysql 
+
 ## How to run
 
 1. migrate
@@ -22,6 +27,7 @@ cp .env.example .env
 
 exposed wallet id can seen from detail wallet and list wallet, so you can use it for next request.
 after you make action to wallet, you can hit api confirmation transaction to confirm it, if you don't confirm it, the transaction will not be processed.
+you can use tool like jmeter or postman to test it.
 
 1. create owner
 

@@ -78,6 +78,10 @@ func (s *walletService) Transfer(c context.Context, req *presentation.Transactio
 		}
 	}
 
+	if senderWallet.Balance < uint64(amountMinor) {
+		return nil, errors.New("Insufficient Balance")
+	}
+
 	tx, err := s.transactionManager.BeginTx(c)
 	if err != nil {
 		return nil, err
@@ -105,7 +109,7 @@ func (s *walletService) Transfer(c context.Context, req *presentation.Transactio
 	
 	result := presentation.WalletActionConfirmation{
 		TrxID: trx.TrxID,
-		Status: trx.Status,
+		Status: string(entity.TransactionStatusPending),
 	}
 
 	return &result, nil
