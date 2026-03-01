@@ -45,8 +45,8 @@ curl -X POST http://localhost:8080/api/owner \
 curl -X POST http://localhost:8080/api/wallet \
   -H "Content-Type: application/json" \
   -d '{
-    "ownerId": <ownerId>,
-    "currency": "IDR"
+    "owner_id": <ownerId>,
+    "currency": "USD"
   }'
 ```
 
@@ -56,7 +56,7 @@ curl -X POST http://localhost:8080/api/wallet \
 curl -X POST http://localhost:8080/api/wallet/<walletId>/top-up \
   -H "Content-Type: application/json" \
   -d '{
-    "amount": 100000
+    "amount": "100000"
   }'
 ```
 
@@ -66,7 +66,7 @@ curl -X POST http://localhost:8080/api/wallet/<walletId>/top-up \
 curl -X POST http://localhost:8080/api/wallet/<walletId>/payment \
   -H "Content-Type: application/json" \
   -d '{
-    "amount": 100000
+    "amount": "100000"
   }'
 ```
 
@@ -78,7 +78,7 @@ curl -X POST http://localhost:8080/api/wallet/transfer \
   -d '{
     "from_wallet_id": <walletId>,
     "to_wallet_id": <walletId>,
-    "amount": 100000
+    "amount": "100000"
   }'
 ```
 
